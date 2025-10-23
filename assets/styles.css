@@ -1,0 +1,232 @@
+:root{
+  /* Material-inspired theme tokens — tweak these to change the look */
+  --mdc-primary: #b71c1c;           /* deep red primary */
+  --mdc-primary-variant: #7f0000;   /* darker */
+  --mdc-secondary: #ff7043;         /* warm accent */
+  --mdc-surface: #ffffff;
+  --mdc-background: #f5f7fb;
+  --mdc-on-primary: #ffffff;
+  --mdc-on-surface: #1f2937;
+  --mdc-muted: #6b7280;
+  --mdc-radius: 12px;
+  --mdc-elev-1: 0 1px 3px rgba(16,24,40,0.06), 0 1px 2px rgba(16,24,40,0.04);
+  --mdc-elev-2: 0 4px 12px rgba(16,24,40,0.08);
+  --container-width:1100px;
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--mdc-background);
+  color:var(--mdc-on-surface);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Layout container */
+.container{max-width:var(--container-width);margin:0 auto;padding:20px}
+
+/* ========== App bar / Header ========== */
+.site-header{
+  background: linear-gradient(180deg, var(--mdc-primary) 0%, var(--mdc-primary-variant) 100%);
+  color:var(--mdc-on-primary);
+  padding:14px 0;
+  box-shadow: var(--mdc-elev-2);
+  position:sticky;
+  top:0;
+  z-index:40;
+}
+
+/* Flexible header columns to avoid overlap */
+.header-grid{
+  display:grid;
+  grid-template-columns: minmax(64px,120px) 1fr minmax(180px,360px);
+  gap:14px;
+  align-items:center;
+  align-content:center;
+  column-gap:18px;
+}
+.brand{display:flex;gap:14px;align-items:center;min-width:0;flex-shrink:0}
+.cover{
+  width:72px;height:72px;object-fit:cover;border-radius:10px;
+  border:2px solid rgba(255,255,255,0.14);
+  box-shadow: var(--mdc-elev-1);
+  background:linear-gradient(45deg, rgba(255,255,255,0.06), rgba(0,0,0,0.03));
+}
+.site-header h1{margin:0;font-size:20px;font-weight:600;letter-spacing:0.2px}
+.tagline{margin:0;font-size:13px;opacity:0.95;color:rgba(255,255,255,0.92)}
+
+/* Contact area: allow wrap and truncation so it doesn't push other elements */
+.contact{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  justify-content:flex-end;
+  text-align:right;
+  color:rgba(255,255,255,0.95);
+  font-size:13px;
+  min-width:0;
+  flex-wrap:wrap;
+}
+.contact p{
+  margin:2px 0;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width:260px; /* prevents long strings from pushing header */
+}
+.contact a{color:rgba(255,255,255,0.95);text-decoration:underline;white-space:nowrap}
+
+/* Material search control: allow it to shrink nicely */
+.search-wrap{justify-self:end;min-width:0}
+#search{
+  max-width:320px;
+  width:100%;
+  padding:10px 14px;
+  border-radius:999px;
+  border:0;
+  background:rgba(255,255,255,0.12);
+  color:var(--mdc-on-primary);
+  outline:none;
+  transition:box-shadow .18s ease, background .18s ease;
+  box-shadow:none;
+  font-size:14px;
+  box-sizing:border-box;
+}
+#search::placeholder{color:rgba(255,255,255,0.78)}
+#search:focus{
+  background:rgba(255,255,255,0.18);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* ========== Main menu card ========== */
+.menu-section{
+  background:var(--mdc-surface);
+  padding:22px;
+  margin:20px 0;
+  border-radius:var(--mdc-radius);
+  box-shadow:var(--mdc-elev-1);
+  transition:transform .12s ease;
+}
+
+/* Page header styles */
+.page-intro{margin:0 0 16px;color:var(--mdc-muted);font-weight:600}
+.menu-section h2{margin:10px 0 8px;color:var(--mdc-primary);font-size:16px}
+
+/* Pager */
+.pager{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:8px}
+.pager button{
+  background:transparent;border:1px solid rgba(0,0,0,0.06);
+  color:var(--mdc-primary);
+  padding:8px 14px;border-radius:10px;cursor:pointer;font-weight:600;
+  box-shadow:var(--mdc-elev-1);
+}
+.pager button:hover{transform:translateY(-1px)}
+.pager button:disabled{opacity:0.5;cursor:not-allowed;transform:none}
+
+/* Featured image (cropped) */
+.feature{position:relative;width:100%;height:240px;border-radius:10px;overflow:hidden;margin:6px 0 18px;
+  background:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.02));
+  display:flex;align-items:center;justify-content:center;
+}
+.feature img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%);filter:saturate(1.05) contrast(1.02)}
+
+/* ========== Columns & menu items ========== */
+.columns{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:980px){.columns{grid-template-columns:1fr 1fr}}
+
+/* Menu items styled as subtle chips in a two-column grid */
+.menu-list{
+  list-style:none;padding:0;margin:8px 0 0;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:10px 14px;
+}
+.menu-list li{
+  padding:10px 12px;
+  background:linear-gradient(180deg, rgba(240,240,245,1), rgba(240,240,245,0.98));
+  border-radius:10px;
+  color:var(--mdc-on-surface);
+  font-size:14px;
+  box-shadow: 0 1px 2px rgba(16,24,40,0.04);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.menu-list li:hover{transform:translateY(-4px);box-shadow:var(--mdc-elev-1)}
+@media(max-width:700px){.menu-list{grid-template-columns:1fr}}
+
+/* ========== Footer (modern) ========== */
+.site-footer{
+  background: linear-gradient(180deg, #121212 0%, #1b1b1b 100%);
+  color: #e6e6e6;
+  padding:28px 0;
+  margin-top:28px;
+  border-top:1px solid rgba(255,255,255,0.03);
+}
+.site-footer .container{
+  display:grid;
+  grid-template-columns:1fr 1fr 260px;
+  gap:18px;
+  align-items:start;
+}
+
+/* Footer text contrast: labels stronger, values muted */
+.site-footer h4{margin:0 0 8px;color:#fff;font-size:15px}
+.site-footer p{margin:6px 0;color:#cfcfcf;font-size:13px}
+.site-footer p small, .site-footer .footer-value{color:var(--mdc-muted);font-weight:400}
+.site-footer a{color:#fff;text-decoration:underline}
+.site-footer .brand-footer{display:flex;gap:12px;align-items:center}
+.brand-footer img{width:56px;height:56px;border-radius:8px;object-fit:cover;box-shadow:var(--mdc-elev-1)}
+.site-footer .socials{display:flex;gap:8px;align-items:center;margin-top:8px}
+
+/* Mobile footer stack */
+@media(max-width:900px){
+  .header-grid{grid-template-columns:1fr;grid-auto-rows:auto;text-align:center}
+  .contact{order:3;justify-content:center}
+  .site-footer .container{grid-template-columns:1fr}
+  .search-wrap{justify-self:center}
+}
+
+/* Accessibility helpers */
+a:focus,input:focus,button:focus{outline:3px solid rgba(183,28,28,0.12);outline-offset:3px}
+
+/* Fix brand overflow in header */
+.brand {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.brand > div {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Responsive adjustments to prevent overlap */
+@media (max-width: 1100px) {
+  .header-grid {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    text-align: center;
+  }
+
+  .brand,
+  .contact,
+  .search-wrap {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact {
+    order: 3;
+    max-width: 100%;
+  }
+
+  .site-header h1 {
+    font-size: 18px;
+  }
+}
