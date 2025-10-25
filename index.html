@@ -8,6 +8,9 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://hunterpillu.github.io/PujaCarterer/" />
 
+  <!-- Icon font (Font Awesome free CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Puja Caterer — Menu & Catering in Ranchi" />
@@ -38,12 +41,55 @@
           <p class="tagline">Catering | Planning | Hosting</p>
         </div>
       </div>
-      <div class="contact">
-        <p><strong>Call / WhatsApp:</strong></p>
-        <p>9835536384, 8210827627, 7761060953</p>
-        <p><strong>Email:</strong> <a href="mailto:bajosaw555@gmail.com">bajosaw555@gmail.com</a></p>
-        <p><strong>Address:</strong> Dela toli, Kokar, Ranchi, Jharkhand 834009</p>
+
+      <!-- Contact block with icon font (not collapsible) -->
+      <div class="contact" aria-label="Contact information">
+        <div class="contact-head">
+          <strong>Contact</strong>
+        </div>
+
+        <div class="contact-content">
+          <p class="contact-row">
+            <a class="contact-link call" href="tel:+919835536384" aria-label="Call 9835536384">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <span class="contact-text">9835536384</span>
+            </a>
+            <a class="contact-link call" href="tel:+918210827627" aria-label="Call 8210827627">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <span class="contact-text">8210827627</span>
+            </a>
+            <a class="contact-link call" href="tel:+917761060953" aria-label="Call 7761060953">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <span class="contact-text">7761060953</span>
+            </a>
+
+            <a class="contact-link whatsapp" href="https://wa.me/919835536384" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp 9835536384">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span class="contact-text">WhatsApp</span>
+            </a>
+          </p>
+
+          <p class="contact-row">
+            <a class="contact-link mail" href="mailto:bajosaw555@gmail.com" aria-label="Email bajosaw555 at gmail dot com">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span class="contact-text">bajosaw555@gmail.com</span>
+            </a>
+            <a class="contact-link mail" href="mailto:pujacaterer.kokar@gmail.com" aria-label="Email pujacaterer dot kokar at gmail dot com">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span class="contact-text">pujacaterer.kokar@gmail.com</span>
+            </a>
+          </p>
+
+          <p class="contact-row">
+            <a class="contact-link address" href="https://www.google.com/maps/search/?api=1&query=23.38524915373752,85.35910097572992"
+               target="_blank" rel="noopener noreferrer" aria-label="Open address in Google Maps">
+              <i class="fa-solid fa-map-pin" aria-hidden="true"></i>
+              <span class="contact-text">Dela toli, Kokar, Ranchi, Jharkhand 834009</span>
+            </a>
+          </p>
+        </div>
       </div>
+
       <div class="search-wrap">
         <input id="search" placeholder="Search menu items..." aria-label="Search menu items" />
       </div>
@@ -51,7 +97,6 @@
   </header>
 
   <main class="container">
-    <!-- Pager removed because we now render all pages on one page -->
     <section id="pageView" class="menu-section">
       <noscript><div class="noscript-msg">Enable JavaScript to browse the interactive menu.</div></noscript>
     </section>
@@ -60,9 +105,20 @@
   <footer class="site-footer">
     <div class="container">
       <p>Contact Puja Caterer for bookings:</p>
-      <p><strong>Call:</strong> 9835536384 | 8210827627 | 7761060953</p>
-      <p><strong>Email:</strong> <a href="mailto:bajosaw555@gmail.com">bajosaw555@gmail.com</a></p>
-      <p><strong>Address:</strong> Dela toli, Kokar, Ranchi, Jharkhand 834009</p>
+      <p><strong>Call:</strong>
+        <a href="tel:+919835536384"><i class="fa-solid fa-phone" aria-hidden="true"></i> 9835536384</a> |
+        <a href="tel:+918210827627"><i class="fa-solid fa-phone" aria-hidden="true"></i> 8210827627</a> |
+        <a href="tel:+917761060953"><i class="fa-solid fa-phone" aria-hidden="true"></i> 7761060953</a>
+      </p>
+      <p><strong>Email:</strong>
+        <a href="mailto:bajosaw555@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> bajosaw555@gmail.com</a>,
+        <a href="mailto:pujacaterer.kokar@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> pujacaterer.kokar@gmail.com</a>
+      </p>
+      <p><strong>Address:</strong>
+        <a href="https://www.google.com/maps/search/?api=1&query=23.38524915373752,85.35910097572992" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-map-pin" aria-hidden="true"></i> Dela toli, Kokar, Ranchi, Jharkhand 834009
+        </a>
+      </p>
     </div>
   </footer>
 
