@@ -214,3 +214,21 @@ body{
   .contact-row{ justify-content:flex-end; }
   .contact p{ max-width:300px; }
 }
+
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adds spacing between images */
+  align-items: center; /* Centers images horizontally */
+}
+
+.image-gallery img {
+  max-width: 100%; /* Ensures images are responsive */
+  height: auto;
+  border-radius: 8px; /* Optional: Adds rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+#pageView {
+  display: none;
+}

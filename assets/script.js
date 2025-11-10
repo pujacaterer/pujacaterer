@@ -357,3 +357,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("search");
+  const pageView = document.getElementById("pageView");
+  const imageGallery = document.querySelector(".image-gallery");
+
+  searchInput.addEventListener("input", () => {
+    if (searchInput.value.trim() !== "") {
+      pageView.style.display = "block";
+      imageGallery.style.display = "none";
+    } else {
+      pageView.style.display = "none";
+      imageGallery.style.display = "flex";
+    }
+  });
+});
